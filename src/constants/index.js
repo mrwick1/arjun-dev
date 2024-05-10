@@ -35,6 +35,10 @@ export const navLinks = [
     title: "Work",
   },
   {
+    id: "projects",
+    title: "Projects",
+  },
+  {
     id: "contact",
     title: "Contact",
   },
@@ -205,7 +209,7 @@ const projects = [
         name: "react",
         color: "blue-text-gradient",
       },
-      
+
       {
         name: "tailwind",
         color: "pink-text-gradient",
@@ -213,11 +217,12 @@ const projects = [
     ],
     image: carrent,
     source_code_link: "https://github.com/mrwick1/brainwave",
-    liveLink:'https://brainwave-blue.vercel.app/'
+    liveLink: "https://brainwave-blue.vercel.app/",
   },
   {
     name: "Hoobank",
-    description:"A website for financial client with stunning UI/UX and fully responsive.",
+    description:
+      "A website for financial client with stunning UI/UX and fully responsive.",
     tags: [
       {
         name: "react",
@@ -229,12 +234,12 @@ const projects = [
       },
     ],
     image: jobit,
-    liveLink:'https://hoobank-sepia.vercel.app/',
+    liveLink: "https://hoobank-sepia.vercel.app/",
     source_code_link: "https://github.com/mrwick1/hoobank",
   },
   {
     name: "Open AI ",
-    description:"A clean website which is fully responsive",
+    description: "A clean website which is fully responsive",
     tags: [
       {
         name: "react",
@@ -247,7 +252,7 @@ const projects = [
     ],
     image: tripguide,
     source_code_link: "https://github.com/mrwick1/open-ai",
-    liveLink:'https://open-ai-dun.vercel.app/',
+    liveLink: "https://open-ai-dun.vercel.app/",
   },
 ];
 
