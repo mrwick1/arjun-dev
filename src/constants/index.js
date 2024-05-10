@@ -233,17 +233,12 @@ const projects = [
     source_code_link: "https://github.com/mrwick1/hoobank",
   },
   {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    name: "Open AI ",
+    description:"A clean website which is fully responsive",
     tags: [
       {
-        name: "nextjs",
+        name: "react",
         color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
       },
       {
         name: "css",
@@ -251,7 +246,8 @@ const projects = [
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/mrwick1/open-ai",
+    liveLink:'https://open-ai-dun.vercel.app/',
   },
 ];
 
