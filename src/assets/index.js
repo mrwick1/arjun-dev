@@ -29,11 +29,13 @@ import limenzy from "./company/limenzy.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import glisten from "./glisten.png";
 
 export {
   logo,
   backend,
   creator,
+  glisten,
   mobile,
   web,
   github,

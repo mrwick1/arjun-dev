@@ -23,6 +23,7 @@ import {
   jobit,
   tripguide,
   threejs,
+  glisten,
 } from "../assets";
 
 export const navLinks = [
@@ -253,6 +254,27 @@ const projects = [
     image: tripguide,
     source_code_link: "https://github.com/mrwick1/open-ai",
     liveLink: "https://open-ai-dun.vercel.app/",
+  },
+  {
+    name: "Glisten AI ",
+    description: "A modern Next js website with amazing animations ",
+    tags: [
+      {
+        name: "Next",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwindcss",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "GSAP",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: glisten,
+    source_code_link: "https://github.com/mrwick1/glisten-app",
+    liveLink: "https://glisten-ai-wheat.vercel.app/",
   },
 ];
 
