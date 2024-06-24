@@ -24,6 +24,9 @@ import {
   tripguide,
   threejs,
   glisten,
+  ebin,
+  sandeep,
+  amal,
 } from '../assets';
 
 export const navLinks = [
@@ -168,7 +171,7 @@ const testimonials = [
     name: 'Ebin John Joseph',
     designation: 'Software Engineer',
     company: 'Hubspire Corp',
-    image: 'src/assets/user/ebin.jpeg',
+    image: ebin,
     link: 'https://www.linkedin.com/in/ebin-j/',
   },
   {
@@ -177,7 +180,7 @@ const testimonials = [
     name: 'Amal K George',
     designation: 'Software Engineer',
     company: 'Hubspire Corp',
-    image: 'src/assets/user/amal.jpeg',
+    image: amal,
     link: 'https://www.linkedin.com/in/amal-k-george/',
   },
   {
@@ -186,7 +189,7 @@ const testimonials = [
     name: 'Sandeep NS',
     designation: 'QA Engineer',
     company: 'Hubspire Corp',
-    image: 'src/assets/user/sandeep.jpeg',
+    image: sandeep,
     link: 'https://www.linkedin.com/in/sandeep-n-s/',
   },
 ];
