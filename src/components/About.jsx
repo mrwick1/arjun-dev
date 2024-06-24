@@ -1,16 +1,16 @@
-import React from "react";
-import Tilt from "react-tilt";
-import { motion } from "framer-motion";
+import React from 'react';
+import Tilt from 'react-tilt';
+import { motion } from 'framer-motion';
 
-import { styles } from "../styles";
-import { services } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { styles } from '../styles';
+import { services } from '../constants';
+import { SectionWrapper } from '../hoc';
+import { fadeIn, textVariant } from '../utils/motion';
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
     >
       <div
@@ -44,14 +44,21 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn('', '', 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Next JS  and Node.js.
-        I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Front-End Developer with over 2 years of experience, specializing in
+        building responsive, accessible, and visually appealing web
+        applications. Proficient in HTML, CSS, JavaScript, TypeScript, and
+        modern frameworks such as React, Next.js. Experienced in state
+        management using Redux, Recoil, and Zustand, and adept at API
+        integration with GraphQL and Apollo Client. Strong background in UI/UX
+        optimization, with hands-on experience in using tools like Bootstrap,
+        MUI, Tailwind, and Styled Components. Proven ability to collaborate with
+        cross-functional teams and mentor junior developers, ensuring
+        high-quality production-grade applications. Certified Meta Front-End
+        Developer with a solid understanding of web accessibility standards
+        (WCAG, ADA).
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
@@ -63,4 +70,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About, 'about');
