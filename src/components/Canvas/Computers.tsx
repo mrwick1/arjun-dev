@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from '../Loader/CanvasLoader';
@@ -30,22 +30,39 @@ const Computers = ({ isMobile }: { isMobile: boolean }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
-
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 500px)');
     setIsMobile(mediaQuery.matches);
     const handleMediaQueryChange = (event: any) => {
       setIsMobile(event.matches);
     };
+    const handleResize = () => {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        // Resize canvas for better performance on mobile
+        const dpr = Math.min(window.devicePixelRatio, 2);
+        canvas.style.width = `${window.innerWidth}px`;
+        canvas.style.height = `${window.innerHeight}px`;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
     mediaQuery.addEventListener('change', handleMediaQueryChange);
 
     return () => {
+      window.removeEventListener('resize', handleResize);
       mediaQuery.removeEventListener('change', handleMediaQueryChange);
     };
   }, []);
 
   return (
     <Canvas
+      ref={canvasRef}
       frameloop='demand'
       shadows
       dpr={[1, 2]}
