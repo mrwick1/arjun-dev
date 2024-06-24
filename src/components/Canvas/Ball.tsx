@@ -1,5 +1,5 @@
 'use client';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import {
   Decal,
@@ -37,18 +37,35 @@ const Ball = ({ url }: { url: string }) => {
 };
 
 const BallCanvas = ({ icon }: { icon: any }) => {
-  return (
-    <Canvas
-      // frameloop='demand'
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+  useEffect(() => {
+    const handleResize = () => {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        // Resize canvas for better performance on mobile
+        const dpr = Math.min(window.devicePixelRatio, 2);
+        canvas.style.width = `${window.innerWidth}px`;
+        canvas.style.height = `${window.innerHeight}px`;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <Canvas ref={canvasRef} dpr={[1, 2]} gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball url={icon?.src} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
