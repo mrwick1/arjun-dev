@@ -52,7 +52,6 @@ const Contact: React.FC = () => {
       errors.forEach((error: any) => {
         toast.error(error.message);
       });
-      console.log(errors);
       return;
     }
 
